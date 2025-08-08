@@ -1,0 +1,23 @@
+ABAP CODE CLEANING RULES:
+1. Remove commented-out ABAP code (e.g., * lv_var = 5.).
+2. Remove historical comments (e.g., * Changed on 01.01.2020).
+3. Remove inline comments which starts with double inverted quotes(")
+EXAMPLE 1:
+Input:
+* Changed on 01.01.2023 by USER1
+DATA: lv_test TYPE i.
+* lv_test = 5.
+WRITE: lv_test.
+
+Output:
+DATA(lv_test) = 0.
+WRITE: lv_test.
+
+EXAMPLE 2:
+Input:
+DATA: lv_test TYPE i.  "Changed by User
+WRITE: lv_test.        " Modified by User
+
+Output:
+DATA(lv_test) = 0.
+WRITE: lv_test.
